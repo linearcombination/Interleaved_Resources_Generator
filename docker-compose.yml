@@ -1,0 +1,11 @@
+version: '2'
+services:
+    export-interleaved-doc:
+        environment:
+            - IRG_OUTPUT_DIR
+            - IRG_CS_USER_URL
+            - TN_ADDITIONAL_PARMS
+        build: .
+        volumes:
+            - "${IRG_OUTPUT_DIR}:/output"
+
