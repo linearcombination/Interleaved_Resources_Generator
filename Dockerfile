@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
     # Install pip requirments with specific versions
     && pip install -r /installs/requirements.txt \
     # get the necessary tools
-    && git clone "https://github.com/WycliffeAssociates/tools.git" /tools \
+    # && git clone "https://github.com/WycliffeAssociates/tools.git" /tools \
+    && git clone "https://github.com/linearcombination/tools.git" /tools \
     # Install specific Pandoc version
     && dpkg -i /installs/pandoc-1.15.0.6-1-amd64.deb \
     # Install specific fonts
