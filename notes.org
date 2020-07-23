@@ -1,0 +1,55 @@
+* Notes
+** Build a custom image that contains texlive so that build times will be faster for development
+Pull down the base image you want to start building from:
+
+#+begin_src shell
+docker pull python:2.7-slim-stretch
+#+end_src
+
+Launch the base image and get a bash shell cli for it:
+
+#+begin_src shell
+docker run -it --name IRG_dev python:2.7-slim-stretch /bin/bash
+#+end_src
+
+At the resulting bash prompt, install the packages you wish to add:
+
+#+begin_src shell
+apt-get update && apt-get install -y \
+        curl \
+        fonts-noto \
+        fontconfig \
+        git \
+        lmodern \
+        texlive-fonts-recommended \
+        texlive-xetex
+#+end_src
+
+Type ctrl+p+q to get out of the running image.
+
+Commit your changes into a local image:
+
+#+begin_src shell
+docker commit IRG_dev python2.7-slim-stretch-with-texlive:v1.0
+#+end_src
+
+#+results:
+sha256:68631d8b733603b5e8c476b6044f9b257f62de702ff14783a0f1494b36d5a63d
+
+Tag the image in preparation for pushing to hub.docker.com:
+
+#+begin_src shell
+docker tag python2.7-slim-stretch-with-texlive:v1.0 analyticdelta/python2.7-slim-stretch-with-texlive:v1.0
+#+end_src
+
+then login via Docker Dashboard on macOS or on command line:
+
+#+begin_src shell
+docker login --username analyticdelta --password password-here
+#+end_src
+
+then push your public image up to hub.docker.com:
+
+#+begin_src shell
+docker push analyticdelta/python2.7-slim-stretch-with-texlive:v1.0
+#+end_src
