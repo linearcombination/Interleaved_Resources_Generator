@@ -1,5 +1,5 @@
 # FROM python:2.7-slim-stretch
-FROM analyticdelta/python2.7-slim-stretch-with-texlive:v1.0
+FROM analyticdelta/python3.7-slim-stretch-with-texlive:v1.0
 
 COPY depends /installs
 COPY ["icon-tn.png", "/working/"]
