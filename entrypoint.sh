@@ -23,7 +23,9 @@ tail -n +2 /working/tn-temp/en_tw/tWs_for_PDFs/tWs_for_NT_PDF.txt >> /working/tn
 cp /working/*.png /working/tn-temp
 
 # Create PDFs
-/tools/run.sh --working /working/tn-temp ${TN_ADDITIONAL_PARMS}
+
+python -m tools.export_md_to_pdf --working /working/tn-temp ${TN_ADDITIONAL_PARMS}
+
 
 # Zip up all PDFs into single archive
 zip -j /working/tn-temp/interleaved_tns.zip /working/tn-temp/*.pdf
