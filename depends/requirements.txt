@@ -5,3 +5,4 @@ PyYAML
 git+git://github.com/linearcombination/USFM-Tools.git#egg=usfm_tools
 jsonpath_rw
 jsonpath_rw_ext
+flask
