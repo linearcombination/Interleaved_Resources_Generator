@@ -26,7 +26,6 @@ cp /working/*.png /working/tn-temp
 
 # python -m tools.export_md_to_pdf --working /working/tn-temp ${TN_ADDITIONAL_PARMS}
 # python -m tools.document_generator --working /working/tn-temp ${TN_ADDITIONAL_PARMS}
-export FLASK_APP="/tools/flask_app.py"
 flask run
 
 
