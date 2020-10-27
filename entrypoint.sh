@@ -20,7 +20,7 @@
 # tail -n +2 /working/tn-temp/en_tw/tWs_for_PDFs/tWs_for_NT_PDF.txt >> /working/tn-temp/tw_refs.csv
 
 # Copy images
-cp /working/*.png /working/tn-temp
+cp /working/*.png /working/temp
 
 # Create PDFs
 

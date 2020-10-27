@@ -41,8 +41,8 @@ RUN pip install -r /installs/requirements.txt \
     # Clean up
     && rm -r /installs \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir /working/tn-temp \
-    && git clone "https://github.com/linearcombination/tools.git" -b develop --single-branch /tools
+    && mkdir /working/temp \
+    && git clone "https://github.com/linearcombination/tools.git" /tools
 
 
 # Copy entrypoint last as it's more likely to change
