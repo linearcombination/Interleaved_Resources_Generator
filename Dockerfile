@@ -2,8 +2,10 @@
 # FROM analyticdelta/python3.7-slim-stretch-with-texlive:v1.0
 FROM analyticdelta/python3.8-slim-buster-with-texlive:v1.0
 
+RUN mkdir -p /working/temp
+
 COPY depends /installs
-COPY ["icon-tn.png", "/working/"]
+COPY ["icon-tn.png", "/working/temp"]
 
 # Install packages
 # RUN apt-get update && apt-get install -y \
@@ -41,7 +43,7 @@ RUN pip install -r /installs/requirements.txt \
     # Clean up
     && rm -r /installs \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir /working/temp \
+    # && mkdir /working/temp \ # Moved to top of Dockerfile
     && git clone "https://github.com/linearcombination/tools.git" /tools
 
 
