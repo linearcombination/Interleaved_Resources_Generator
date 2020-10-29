@@ -2,7 +2,7 @@
 # FROM analyticdelta/python3.7-slim-stretch-with-texlive:v1.0
 FROM analyticdelta/python3.8-slim-buster-with-texlive:v1.0
 
-RUN mkdir -p /working/temp && mkdir -p /output
+RUN mkdir -p /working/temp
 
 COPY depends /installs
 COPY ["icon-tn.png", "/working/temp"]
