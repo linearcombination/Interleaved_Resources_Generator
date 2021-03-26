@@ -10,7 +10,7 @@ bs4 = "==0.0.1"
 openpyxl = "==2.6.2"
 usfm-tools = {git = "git://github.com/linearcombination/USFM-Tools.git"}
 Markdown = "==3.1"
-PyYAML = "==5.1"
+PyYAML = "==5.4"
 
 [requires]
 python_version = "3.8"
